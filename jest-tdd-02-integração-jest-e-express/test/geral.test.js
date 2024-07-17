@@ -6,13 +6,13 @@ const supertest = require("supertest")
 
 let request = supertest(app)
 
-test("A aplicação deve responder na porta 3131", () => {
+test("A aplicação deve responder na porta 3131", async () => {
     //Promise
-    return request.get("/").then(res => expect(res.statusCode).toEqual(200))
+    // return request.get("/").then(res => expect(res.statusCode).toEqual(200))
     
     // Async/Await
-    // let res = await request.get("/")
-    // expect(res.statusCode).toEqual(200)
+    let res = await request.get("/")
+    expect(res.statusCode).toEqual(200)
 })
 
 test("Deve retornar Azul como cor favorita do Diego", () => {

@@ -9,6 +9,5 @@
   "scripts": {
     "test": "jest",
     "start": "npx nodemon ./src/server.js"
-  },
-  "type" : "module"
+  }
 }
