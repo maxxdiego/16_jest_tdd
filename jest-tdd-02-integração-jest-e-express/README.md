@@ -1,4 +1,4 @@
-# 01 - Introdução ao JEST
+# 02 - Integração Jest e Express
 
 ## Iniciar um projeto node:
 
@@ -47,92 +47,6 @@ npm install jest
 ```bash
 
 npm install @types/jest
-
-```
-
-### Escrevendo o primeiro teste:
-
-
-```bash
-
-./test/calculadora.test.js:
-
-const app = require("../app.js")
-
-// 1º PARÂMETRO O QUE O TESTE FAZ
-// 2º PARÂMETRO COM A FUNÇÃO DO TESTE
-
-test("Deve retornar o valor 10 ao somar 5 + 5", () => {
-    let resultado = app.soma(5,5)
-    expect(resultado).toEqual(10)
-})
-
-```
-
-### Rodando o teste (o 1º teste deve sempre falhar):
-
-```bash
-
-npm run test
-
-```
-
-### Implementando o código:
-
-```bash
-
-./app.js:
-
-module.exports = {
-    soma: function(a,b){
-        return a + b
-    }
-}
-
-```
-
-### Rodando o teste (o 2º teste deve passar):
-
-```bash
-
-npm run test
-
-```
-
-### Usando "describe()" para organizar os testes em categorias:
-
-```bash
-./app.js:
-
-module.exports = {
-    soma: function(a,b){
-        return a + b
-    },
-    mult: function(a,b){
-        return a * b
-    }
-}
-```
-
-```bash
-
-./test/calculadora.test.js:
-
-const app = require("../app.js")
-
-// describe() serve para organizar os testes em categorias
-describe("Operações básicas", () => {
-
-    test("Deve retornar o valor 10 ao somar 5 + 5", () => {
-        let resultado = app.soma(5,5)
-        expect(resultado).toEqual(10)
-    })
-
-    test("Deve retornar o valor 10 ao multiplicar 2 por 5", () => {
-        let resultado = app.mult(2,5)
-        expect(resultado).toEqual(10)
-    })
-})
 
 ```
 
