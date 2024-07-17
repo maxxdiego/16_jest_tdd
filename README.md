@@ -67,6 +67,14 @@ npm install jest
 
 ```
 
+## Instalar o autocomplete do JEST:
+
+```bash
+
+npm install @types/jest
+
+```
+
 ## Criar os scripts "test" e "start" no package.json:
 
 ```bash
@@ -90,14 +98,6 @@ npm install jest
   "license": "ISC",
   "description": ""
 }
-
-```
-
-## Instalar o autocomplete do JEST:
-
-```bash
-
-npm install @types/jest
 
 ```
 
