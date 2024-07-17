@@ -1,6 +1,12 @@
 # Introdução a TDD com o JEST
 
-## Desenvolvimento Guiado por Testes:
+![NPM](https://img.shields.io/npm/l/react)
+
+:warning: Ainda em construção. :construction:
+
+## Introdução:
+
+* Desenvolvimento Guiado por Testes:
 
 O desenvolvimento guiado por testes é um dos temas mais importantes para ser aprendido por um desenvolvedor profissional. 
 
@@ -31,28 +37,6 @@ TDD é uma prática de desenvolvimento de software onde os testes são escritos 
 * Refatore: Melhore o código, mantendo os testes passando. 
 Esse ciclo se repete para cada pequena funcionalidade, garantindo que o código seja continuamente testado e melhorado.
 
-
-### Vantagens do TDD:
-
-- Qualidade do Código: Aumenta a qualidade do código, promovendo design mais limpo e modular.
-
-- Detecção de Erros: Facilita a detecção de erros logo no início do desenvolvimento.
-
-- Manutenção: Código mais fácil de manter e refatorar.
-
-- Confiança: Proporciona mais confiança ao desenvolvedor, sabendo que o código funciona conforme o esperado.
-
-### Desvantagens do TDD:
-
-- Tempo Inicial: Pode aumentar o tempo de desenvolvimento inicial, já que envolve a escrita de testes antes do código.
-
-- Complexidade: Requer uma mudança na mentalidade e disciplina dos desenvolvedores, o que pode ser difícil para alguns.
-
-- Cobertura de Testes: Pode não cobrir todos os casos, especialmente em sistemas complexos.
-
-- Manutenção dos Testes: Os testes precisam ser mantidos junto com o código, o que pode ser oneroso em projetos grandes.
-
-
 ### Testes no Javascript com JEST
 
 Jest é uma ferramenta de teste de JavaScript. Em termos simples, ele é usado para escrever e executar testes automatizados em aplicações JavaScript, especialmente em projetos que utilizam bibliotecas e frameworks como React e Express. 
@@ -63,9 +47,9 @@ O Jest ajuda a garantir que o código funcione conforme esperado, facilitando a 
 
 Para iniciarmos um projeto Javascript e utilizarmos o JEST utilizaremos o Node.js que é um interpretador de código que faz o Javascript funcionar fora do navegador.
 
-- Para isso, no terminal do VS Code iniciamos utilizando o comando npm init para iniciarmos um novo projeto:
-
 ## Iniciar um projeto node:
+
+- No terminal do VS Code para iniciarmos um novo projeto iniciamos utilizando o comando:
 
 ```bash
 
@@ -73,10 +57,9 @@ npm init
 
 ```
 
-- Após isso, instalamos o JEST com o comando npm install jest:
-npm install jest
-
 ## Instalar o JEST:
+
+- Após isso, instalamos o JEST com o comando:
 
 ```bash
 
@@ -231,6 +214,26 @@ describe("Operações básicas", () => {
 npm run test
 
 ```
+
+### Vantagens do TDD:
+
+- Qualidade do Código: Aumenta a qualidade do código, promovendo design mais limpo e modular.
+
+- Detecção de Erros: Facilita a detecção de erros logo no início do desenvolvimento.
+
+- Manutenção: Código mais fácil de manter e refatorar.
+
+- Confiança: Proporciona mais confiança ao desenvolvedor, sabendo que o código funciona conforme o esperado.
+
+### Desvantagens do TDD:
+
+- Tempo Inicial: Pode aumentar o tempo de desenvolvimento inicial, já que envolve a escrita de testes antes do código.
+
+- Complexidade: Requer uma mudança na mentalidade e disciplina dos desenvolvedores, o que pode ser difícil para alguns.
+
+- Cobertura de Testes: Pode não cobrir todos os casos, especialmente em sistemas complexos.
+
+- Manutenção dos Testes: Os testes precisam ser mantidos junto com o código, o que pode ser oneroso em projetos grandes.
 
 <hr>
 
