@@ -1,8 +1,0 @@
-npm install jest
-
-
-Script
-"test": "jest"
-
-
-npm install @types/jest
