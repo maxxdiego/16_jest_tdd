@@ -6,7 +6,7 @@
 
 ## Introdução:
 
-* Desenvolvimento Guiado por Testes:
+Desenvolvimento Guiado por Testes:
 
 O desenvolvimento guiado por testes é um dos temas mais importantes para ser aprendido por um desenvolvedor profissional. 
 
