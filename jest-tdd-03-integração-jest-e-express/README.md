@@ -16,6 +16,22 @@ npm install jest
 
 ```
 
+## Instalar o autocomplete do JEST:
+
+```bash
+
+npm install @types/jest
+
+```
+
+## Instalar o supertest (ajuda a testar requisições para uma API):
+
+```bash
+
+npm install supertest
+
+```
+
 ## Criar os scripts "test" e "start" no package.json:
 
 ```bash
@@ -32,21 +48,13 @@ npm install jest
   "main": "app.js",
   "scripts": {
     "test": "jest",
-    "start": "npx nodemon app.js"
+    "start": "npx nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
 }
-
-```
-
-## Instalar o autocomplete do JEST:
-
-```bash
-
-npm install @types/jest
 
 ```
 

@@ -25,7 +25,3 @@ describe("Operações básicas", () => {
         expect(resultado).toEqual(10)
     })
 })
-
-
-
-
