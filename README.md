@@ -26,7 +26,7 @@ Verifica a interação entre diferentes módulos ou componentes de um sistema pa
 
 Verifica a funcionalidade completa do sistema, desde o início até o fim, garantindo que todos os componentes e fluxos de trabalho funcionem como esperado em um ambiente que simula as condições reais de uso. Esses testes cobrem o sistema de uma perspectiva do usuário final, validando que todos os processos e integrações estão funcionando corretamente.
 
-### Test Driven Development - TDD:
+## Test Driven Development - TDD:
 
 TDD é uma prática de desenvolvimento de software onde os testes são escritos antes do código funcional. Em resumo, funciona assim:
 
@@ -37,7 +37,7 @@ TDD é uma prática de desenvolvimento de software onde os testes são escritos 
 * Refatore: Melhore o código, mantendo os testes passando. 
 Esse ciclo se repete para cada pequena funcionalidade, garantindo que o código seja continuamente testado e melhorado.
 
-### Testes no Javascript com JEST
+## Testes no Javascript com JEST
 
 Jest é uma ferramenta de teste de JavaScript. Em termos simples, ele é usado para escrever e executar testes automatizados em aplicações JavaScript, especialmente em projetos que utilizam bibliotecas e frameworks como React e Express. 
 
