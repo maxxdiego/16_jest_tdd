@@ -36,7 +36,7 @@ afterAll(async () => {
 });
 
 describe("Cadastro de usuários", () => {
-  test("Deve cadastrar um usuário com sucesso", () => {
+  test("Deve cadastrar um usuário com sucesso.", () => {
     const time = Date.now();
     const email = `${time}@gmail.com`;
     const user = { name: "Diego", email, password: "123456" };
@@ -53,7 +53,7 @@ describe("Cadastro de usuários", () => {
       });
   });
 
-  test("Deve impedir que o usuário se cadastre com os dados vazios", () => {
+  test("Deve impedir que o usuário se cadastre com os dados vazios.", () => {
     const user = { name: "", email: "", password: "" };
 
     return request
@@ -67,7 +67,7 @@ describe("Cadastro de usuários", () => {
       });
   });
 
-  test("Deve impedir que o usuário se cadastre com um e-mail repetido", () => {
+  test("Deve impedir que o usuário se cadastre com um e-mail repetido.", () => {
     const time = Date.now();
     const email = `${time}@gmail.com`;
     const user = { name: "Diego", email, password: "123456" };
@@ -97,13 +97,39 @@ describe("Cadastro de usuários", () => {
 });
 
 describe("Autenticação de usuários", () => {
-  test("Deve retornar um token quando logar", () => {
+  test("Deve retornar um token quando logar.", () => {
     return request
       .post("/auth")
       .send({ email: mainUser.email, password: mainUser.password })
       .then((res) => {
         expect(res.statusCode).toEqual(200);
         expect(res.body.token).toBeDefined();
+      })
+      .catch((err) => {
+        throw err;
+      });
+  });
+
+  test("Deve impedir que um usuário não cadastrado se logue.", () => {
+    return request
+      .post("/auth")
+      .send({ email: "email-errado@email.com", password: "senha-errada" })
+      .then((res) => {
+        expect(res.statusCode).toEqual(403);
+        expect(res.body.errors.email).toEqual("E-mail não cadastrado.");
+      })
+      .catch((err) => {
+        throw err;
+      });
+  });
+
+  test("Deve impedir que um usuário se logue com uma senha errada.", () => {
+    return request
+      .post("/auth")
+      .send({ email: mainUser.email, password: "senha-errada" })
+      .then((res) => {
+        expect(res.statusCode).toEqual(403);
+        expect(res.body.errors.password).toEqual("Senha incorreta.");
       })
       .catch((err) => {
         throw err;
