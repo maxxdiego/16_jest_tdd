@@ -1,4 +1,4 @@
-const app = require("../app")
+const app = require("../src/app")
 
 // Testando verificação de frete grátis
 test("Deve retornar verdadeiro para o valor de compra acima de R$100,00", () => {

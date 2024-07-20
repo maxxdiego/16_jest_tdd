@@ -2,7 +2,7 @@
 
 // Após o primeiro teste ser bem-sucedido, refatore o código e faça um novo teste, verificando se a função retorna "0" caso receba a sigla de estado igual a "SP". Trate a diferenciação de letras maiúsculas e minúsculas.
 
-const app = require("../app.js")
+const app = require("../src/app")
 
 test("Deve retornar o valor '49.90' ao receber uma sigla de estado diferente de 'SP'.", () => {
     const taxaEntrega = app.taxaEntrega("PR")

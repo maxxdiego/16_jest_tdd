@@ -1,4 +1,4 @@
-const app = require("../app")
+const app = require("../src/app")
 
 test("Deve retornar nacionalidade 'Brasileiro' quando recebe a sigla 'BR'", () => {
     let nacionalidade = app.verificaNacionalidade('BR')

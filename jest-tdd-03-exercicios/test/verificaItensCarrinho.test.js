@@ -4,7 +4,7 @@
 
 // Após o segundo teste ser bem-sucedido, refatore o código e faça um novo teste, verificando se a função retorna "Valor inválido" caso receba um número de itens menor que "0".
 
-const app = require("../app")
+const app = require("../src/app")
 
 test("Deve retornar 'true' caso receba um número de itens acima de '0'.", () => {
     const carrinho = app.verificaItensCarrinho(3)
