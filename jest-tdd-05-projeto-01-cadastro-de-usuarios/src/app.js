@@ -1,8 +1,13 @@
+/* Disclaimer:
+  Nessa aplicação não será usado nenhum padrão de projeto, por exemplo MVC, 
+  pois o foco é o aprendizado de realização de testes. */
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const User = require("./models/User");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken")
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -16,9 +21,7 @@ mongoose
     console.log(err);
   });
 
-/* Disclaimer:
-  Nessa aplicação não será usado nenhum padrão de projeto, por exemplo MVC, 
-  pois o foco é o aprendizado de realização de testes. */
+
 
 // GET
 app.get("/", (req, res) => {
@@ -52,6 +55,12 @@ app.post("/user", async (req, res) => {
     res.sendStatus(500);
     console.log(err);
   }
+});
+
+// DELETE
+app.delete("/user/:email", async (req, res) => {
+  await User.deleteOne({ email: req.params.email });
+  res.sendStatus(200);
 });
 
 module.exports = app;

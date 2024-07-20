@@ -3,12 +3,39 @@ const supertest = require("supertest");
 const request = supertest(app);
 const mongoose = require("mongoose");
 
-describe("Cadastro de usuário", () => {
-  afterAll(async () => {
-    // Fecha a conexão com o MongoDB após todos os testes
-    await mongoose.disconnect();
-  });
+// beforeEach : Roda antes de cada teste
+// afterEach : Roda depois de cada teste
 
+const mainUser = {
+  name: "Teste",
+  email: "teste@email.com",
+  password: "123456",
+};
+
+// Roda antes de todos os testes
+beforeAll(async () => {
+  // Inserir usuário Teste no banco
+  try {
+    await request.post("/user").send(mainUser);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+// Roda depois de todos os testes
+afterAll(async () => {
+  // Remover o usuário Teste no banco
+  try {
+    await request.delete(`/user/${mainUser.email}`);
+  } catch (err) {
+    console.log(err);
+  }
+
+  // Fecha a conexão com o MongoDB após todos os testes
+  await mongoose.disconnect();
+});
+
+describe("Cadastro de usuários", () => {
   test("Deve cadastrar um usuário com sucesso", () => {
     const time = Date.now();
     const email = `${time}@gmail.com`;
@@ -62,6 +89,21 @@ describe("Cadastro de usuário", () => {
           .catch((err) => {
             throw err;
           });
+      })
+      .catch((err) => {
+        throw err;
+      });
+  });
+});
+
+describe("Autenticação de usuários", () => {
+  test("Deve retornar um token quando logar", () => {
+    return request
+      .post("/auth")
+      .send({ email: mainUser.email, password: mainUser.password })
+      .then((res) => {
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.token).toBeDefined();
       })
       .catch((err) => {
         throw err;
