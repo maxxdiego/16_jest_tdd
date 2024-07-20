@@ -1,6 +1,12 @@
-let app = require("../src/app");
-let supertest = require("supertest");
-let request = supertest(app);
+const app = require("../src/app");
+const supertest = require("supertest");
+const request = supertest(app);
+const mongoose = require("mongoose");
+
+afterAll(async () => {
+  // Fecha a conexão com o MongoDB após todos os testes
+  await mongoose.disconnect();
+});
 
 test("A aplicação deve responder na porta 3131", () => {
   return request
@@ -10,6 +16,6 @@ test("A aplicação deve responder na porta 3131", () => {
       expect(status).toEqual(200);
     })
     .catch((err) => {
-      fail(err);
+      throw err;
     });
 });
